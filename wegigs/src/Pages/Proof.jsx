@@ -109,4 +109,3 @@ const Proof = () => {
 };
 
 export default Proof;
-
