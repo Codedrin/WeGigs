@@ -8,12 +8,12 @@ import image5 from "../assets/images/image5.jpg";
 import image6 from "../assets/images/image6.jpg";
 
 const services = [
-  { id: 1, title: "Web Development", description: "We create modern and responsive websites.", icon: <FaCode size={32} className="text-blue-500" />, image: image1 },
-  { id: 2, title: "App Development", description: "We build high-performance mobile applications.", icon: <FaMobileAlt size={32} className="text-orange-500" />, image: image2 },
-  { id: 3, title: "UI/UX Design", description: "We design engaging and user-friendly interfaces.", icon: <FaPalette size={32} className="text-purple-500" />, image: image3 },
-  { id: 4, title: "Graphic & Logo Design", description: "We create visually appealing designs, including logos and branding materials.", icon: <FaBrush size={32} className="text-green-500" />, image: image4 },
-  { id: 5, title: "Banner & Video Editing", description: "We craft stunning banners and edit professional-quality videos.", icon: <FaVideo size={32} className="text-red-500" />, image: image5 },
-  { id: 6, title: "IoT Development", description: "We develop smart IoT solutions for connected devices and automation.", icon: <FaMicrochip size={32} className="text-cyan-500" />, image: image6 }
+  { id: 1, title: "Web Development", description: "We create modern and responsive websites.", icon: <FaCode size={32} className="text-blue-500" />, image: image2 },
+  { id: 2, title: "App Development", description: "We build high-performance mobile applications.", icon: <FaMobileAlt size={32} className="text-orange-500" />, image: image3 },
+  { id: 3, title: "UI/UX Design", description: "We design engaging and user-friendly interfaces.", icon: <FaPalette size={32} className="text-purple-500" />, image: image4 },
+  { id: 4, title: "Graphic & Logo Design", description: "We create visually appealing designs, including logos and branding materials.", icon: <FaBrush size={32} className="text-green-500" />, image: image5 },
+  { id: 5, title: "Banner & Video Editing", description: "We craft stunning banners and edit professional-quality videos.", icon: <FaVideo size={32} className="text-red-500" />, image: image6 },
+  { id: 6, title: "IoT Development", description: "We develop smart IoT solutions for connected devices and automation.", icon: <FaMicrochip size={32} className="text-cyan-500" />, image: image1 }
 ];
 
 const Service = () => {
