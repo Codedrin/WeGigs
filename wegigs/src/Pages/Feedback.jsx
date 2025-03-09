@@ -9,16 +9,7 @@ const Feedback = () => {
     <div className="flex justify-center items-center h-screen px-4">
       <div className="bg-blue-500 p-12 rounded-2xl shadow-lg w-full max-w-[500px] text-white text-center">
         <h2 className="text-xl font-bold mb-4">Rate Your Experience</h2>
-        <input
-          type="text"
-          className="w-full p-3 mb-3 text-black rounded-md"
-          placeholder="Enter your name"
-        />
-        <input
-          type="email"
-          className="w-full p-3 mb-4 text-black rounded-md"
-          placeholder="Enter your email"
-        />
+
         <div className="flex justify-center mb-4">
           {[...Array(5)].map((_, index) => {
             const starValue = index + 1;
@@ -35,6 +26,17 @@ const Feedback = () => {
             );
           })}
         </div>
+        <input
+          type="text"
+          className="w-full p-3 mb-3 text-black rounded-md"
+          placeholder="Enter your name"
+        />
+        <input
+          type="email"
+          className="w-full p-3 mb-4 text-black rounded-md"
+          placeholder="Enter your email"
+        />
+       
         <textarea
           className="w-full p-3 text-black rounded-md"
           placeholder="Write your feedback here..."
