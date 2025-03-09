@@ -33,6 +33,7 @@ const Nav = () => {
             <Link to="/projects" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200">Projects</Link>
             <Link to="/teams" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200">About Us</Link>
             <Link to="/contact" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200">Contact</Link>
+            <Link to="/feed" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200">Feedback</Link>
           </div>
 
           {/* Hamburger Icon */}
@@ -63,6 +64,7 @@ const Nav = () => {
           <Link to="/projects" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200" onClick={closeMenu}>Projects</Link>
           <Link to="/teams" className="text-gray-600 hover:text-blue-500 py-4 text-xl" onClick={closeMenu}>About Us</Link>
           <Link to="/contact" className="text-gray-600 hover:text-blue-500 py-4 text-xl" onClick={closeMenu}>Contact</Link>
+          <Link to="/feed" className="text-gray-600 hover:text-blue-500 text-lg md:text-xl transition duration-200">Feedback</Link>
         </div>
       </div>
     </>
