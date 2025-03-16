@@ -15,6 +15,8 @@ import Proj10 from '../../assets/Projects/Proj10.jpg';
 import Proj11 from '../../assets/Projects/Proj11.jpg';
 import Proj12 from '../../assets/Projects/Proj12.jpeg';
 import Proj13 from '../../assets/Projects/Proj13.jpeg';
+import Proj14 from '../../assets/Projects/Proj14.jpg';
+import Proj15 from '../../assets/Projects/Proj15.jpeg';
 
 // Array of project data with icons
 const projects = [
@@ -30,6 +32,8 @@ const projects = [
   { id: 10, image: Proj11, title: 'AutoPomodoroApp: An IoT-based Pomodoro Mobile Application', icons: [FaJava, SiFirebase, SiArduino ] },
   { id: 11, image: Proj12, title: 'E-root', icons: [FaJava, SiFirebase] },
   { id: 12, image: Proj13, title: 'Coffeetect', icons: [FaJava, SiFirebase] },
+  { id: 13, image: Proj14, title: 'Brain Powergame', icons: [FaJava, ] },
+  { id: 15, image: Proj15, title: 'Money Talk', icons: [FaJava,] },
 ];
 
 const Website = () => {
