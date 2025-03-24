@@ -42,7 +42,7 @@ const Feedback = () => {
         rating,
       };
 
-      const res = await axios.post("http://localhost:5000/api/submit", payload);
+      const res = await axios.post("https://wegigs.onrender.com/api/submit", payload);
       alert("✅ Feedback submitted successfully!");
       setFormData({ name: "", email: "", feedback: "", features: [] });
       setRating(0);

@@ -23,7 +23,7 @@ const Proof = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/getAllFeedback");
+        const res = await axios.get("https://wegigs.onrender.com/api/getAllFeedback");
         setFeedbacks(res.data);
       } catch (error) {
         console.error("❌ Failed to fetch feedback:", error);

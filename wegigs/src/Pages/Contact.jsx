@@ -27,7 +27,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      await axios.post('http://localhost:5000/api/Contactsubmit', formData);
+      await axios.post('https://wegigs.onrender.com/api/Contactsubmit', formData);
       alert('✅ Message sent successfully!');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
