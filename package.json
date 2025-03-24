@@ -1,4 +1,18 @@
 {
+  "name": "wegigs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+"scripts": {
+  "start": "vite",
+  "build": "vite build",
+  "serve": "vite preview",
+
+  "wegigs": "npm run dev --prefix wegigs",
+  "backend": "nodemon backend/index.js",
+
+  "dev": "concurrently \"npm run wegigs\" \"npm run backend\""
+},
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "framer-motion": "^12.5.0",
@@ -11,3 +25,6 @@
     "swiper": "^11.2.4"
   }
 }
+
+
+

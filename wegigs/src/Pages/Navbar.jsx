@@ -5,8 +5,8 @@ import Home from './Home';
 import Projects from './Projects';
 import Teams from './Teams';
 import Contact from './Contact';
-import Proof from './Proof'; // Import Proof component
-import Feedback from './Feedback'; // Import Proof component
+import Proof from './Proof'; 
+import Feedback from './Feedback'; 
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
           <Nav />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/proof" element={<Proof />} /> {/* Added Proof Route */}
+            <Route path="/proof" element={<Proof />} /> 
             <Route path="/projects" element={<Projects />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/contact" element={<Contact />} />

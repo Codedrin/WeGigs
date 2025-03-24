@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
+import axios from "axios";
 import "tailwindcss/tailwind.css";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import Proof2 from "./Proof2"; // Import ng bagong component
-import Footer from "./Footer"; // Import Footer component
+import Proof2 from "./Proof2";
+import Footer from "./Footer";
 
 import proof1 from "../assets/Proof/Proof1.jpg";
 import proof2 from "../assets/Proof/Proof2.jpeg";
@@ -17,6 +18,20 @@ const Proof = () => {
   const sliderRef = useRef(null);
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [feedbacks, setFeedbacks] = useState([]);
+
+  useEffect(() => {
+    const fetchFeedbacks = async () => {
+      try {
+        const res = await axios.get("http://localhost:5000/api/getAllFeedback");
+        setFeedbacks(res.data);
+      } catch (error) {
+        console.error("❌ Failed to fetch feedback:", error);
+      }
+    };
+
+    fetchFeedbacks();
+  }, []);
 
   useEffect(() => {
     const slider = sliderRef.current;
@@ -68,14 +83,22 @@ const Proof = () => {
 
   return (
     <div className="w-full overflow-hidden pb-0">
-<br />
-<br />
-      <div ref={sliderRef} className="flex space-x-4">
+      <br />
+      <br />
+
+      {/* Proof Images Carousel */}
+      <div ref={sliderRef} className="flex space-x-4 px-4">
         {images.concat(images).map((src, index) => (
-          <div key={index} className="min-w-[200px] h-[150px] cursor-pointer" onClick={() => openModal(index % images.length)}>
-            <img src={src}
-             alt={`Proof ${index + 1}`}
-            className="w-full h-full object-cover rounded-md shadow-md" />
+          <div
+            key={index}
+            className="min-w-[200px] h-[150px] cursor-pointer"
+            onClick={() => openModal(index % images.length)}
+          >
+            <img
+              src={src}
+              alt={`Proof ${index + 1}`}
+              className="w-full h-full object-cover rounded-md shadow-md"
+            />
           </div>
         ))}
       </div>
@@ -83,6 +106,7 @@ const Proof = () => {
       {/* Title and Description */}
       <Proof2 />
 
+      {/* Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
           <button onClick={closeModal} className="absolute top-5 right-5 text-white text-3xl">
@@ -103,7 +127,32 @@ const Proof = () => {
         </div>
       )}
 
-<Footer />
+      {/* 🟦 Feedback Section */}
+      <div className="px-6 py-12 bg-white">
+        <h2 className="text-3xl font-bold text-center text-blue-500 mb-6">What People Say</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {feedbacks.map((item, index) => (
+            <div
+              key={index}
+              className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            >
+              <div className="mb-2 text-yellow-500">
+                {"⭐".repeat(item.rating)}{" "}
+                <span className="text-gray-500">({item.rating}/5)</span>
+              </div>
+              <p className="text-gray-800 mb-2">"{item.feedback}"</p>
+              <p className="text-sm text-gray-600">— {item.name}</p>
+              <ul className="mt-2 text-sm text-gray-500 list-disc list-inside">
+                {item.features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };
